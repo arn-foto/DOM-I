@@ -42,12 +42,27 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
+//I used the querySelector method to return the first Element within the document 
+// that matches the element im looking for. 
+let anchorTag = document.querySelectorAll('a');
+
+
+anchorTag.forEach(item => item.style.color = 'green');
+
+const anchorTagAuto = siteContent[Object.keys(siteContent)[0]];
+
+
+// I used a for loop to go through the index of "anchortag" and returned to whole length of it
+for (let i = 0; i < anchorTag.length; i++) {
+  anchorTag[i].textContent = anchorTagAuto[Object.keys(anchorTagAuto)[i]];
+};
+
 // used a style to scale navigation links when mouse is hovered over it
-const navContainer = document.querySelector('nav');
-navContainer.addEventListener("mouseenter", () => {
-  navContainer.style.transform = "scale(1.2)"
-  navContainer.style.transition = "all 0.3s"
-})
-navContainer.addEventListener("mouseleave", (event) => {
-  event.target.style.transform = "scale(1)"
-})
+// const navContainer = document.querySelector('nav');
+// navContainer.addEventListener("mouseenter", () => {
+//   navContainer.style.transform = "scale(1.2)"
+//   navContainer.style.transition = "all 0.3s"
+// })
+// navContainer.addEventListener("mouseleave", (event) => {
+//   event.target.style.transform = "scale(1)"
+// })
