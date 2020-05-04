@@ -51,18 +51,30 @@ anchorTag.forEach(item => item.style.color = 'green');
 
 const anchorTagAuto = siteContent[Object.keys(siteContent)[0]];
 
-
 // I used a for loop to go through the index of "anchortag" and returned to whole length of it
 for (let i = 0; i < anchorTag.length; i++) {
   anchorTag[i].textContent = anchorTagAuto[Object.keys(anchorTagAuto)[i]];
 };
 
 // used a style to scale navigation links when mouse is hovered over it
-// const navContainer = document.querySelector('nav');
-// navContainer.addEventListener("mouseenter", () => {
-//   navContainer.style.transform = "scale(1.2)"
-//   navContainer.style.transition = "all 0.3s"
-// })
-// navContainer.addEventListener("mouseleave", (event) => {
-//   event.target.style.transform = "scale(1)"
-// })
+const navContainer = document.querySelector('nav');
+navContainer.addEventListener("mouseenter", () => {
+  navContainer.style.transform = "scale(1.2)"
+  navContainer.style.transition = "all 0.3s"
+})
+navContainer.addEventListener("mouseleave", (event) => {
+  event.target.style.transform = "scale(1)"
+})
+
+let middleImg = document.querySelector('#middle-img');
+middleImg.src = siteContent['main-content']['middle-img-src'];
+
+// used a style to scale image up when mouse hovers over it
+middleImg.addEventListener("mouseenter", () => {
+  middleImg.style.transform = "scale(1.2)"
+  middleImg.style.transition = "all 0.3s"
+})
+// used a style to scale back down
+middleImg.addEventListener("mouseleave", (event) => {
+  event.target.style.transform = "scale(1)"
+})
