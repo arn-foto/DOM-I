@@ -69,6 +69,7 @@ navContainer.addEventListener("mouseleave", (event) => {
 let middleImg = document.querySelector('#middle-img');
 middleImg.src = siteContent['main-content']['middle-img-src'];
 
+//https://www.w3schools.com/jsref/dom_obj_all.asp for DOM elements
 // used a style to scale image up when mouse hovers over it
 middleImg.addEventListener("mouseenter", () => {
   middleImg.style.transform = "scale(1.2)"
